@@ -15,6 +15,7 @@
 		4570EB842414BF0000605321 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4570EB822414BF0000605321 /* LaunchScreen.storyboard */; };
 		4570EB8F2414BF0000605321 /* document_reader_visionkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570EB8E2414BF0000605321 /* document_reader_visionkitTests.swift */; };
 		4570EB9A2414BF0000605321 /* document_reader_visionkitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570EB992414BF0000605321 /* document_reader_visionkitUITests.swift */; };
+		4570EBA82414C27B00605321 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570EBA72414C27B00605321 /* CameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4570EB952414BF0000605321 /* document-reader-visionkitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "document-reader-visionkitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4570EB992414BF0000605321 /* document_reader_visionkitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = document_reader_visionkitUITests.swift; sourceTree = "<group>"; };
 		4570EB9B2414BF0000605321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4570EBA72414C27B00605321 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				4570EB772414BEFC00605321 /* AppDelegate.swift */,
 				4570EB792414BEFC00605321 /* SceneDelegate.swift */,
 				4570EB7B2414BEFC00605321 /* ViewController.swift */,
+				4570EBA72414C27B00605321 /* CameraController.swift */,
 				4570EB7D2414BEFC00605321 /* Main.storyboard */,
 				4570EB802414BF0000605321 /* Assets.xcassets */,
 				4570EB822414BF0000605321 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				4570EB7C2414BEFC00605321 /* ViewController.swift in Sources */,
 				4570EB782414BEFC00605321 /* AppDelegate.swift in Sources */,
+				4570EBA82414C27B00605321 /* CameraController.swift in Sources */,
 				4570EB7A2414BEFC00605321 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

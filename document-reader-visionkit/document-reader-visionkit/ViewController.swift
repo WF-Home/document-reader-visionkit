@@ -9,12 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let cameraController = CameraController()
+    @IBOutlet weak var capturePreviewView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        configureCameraController()
+    }
+    
+    func configureCameraController() {
+        cameraController.prepare {(error) in
+            if let error = error {
+                print(error)
+            }
+     
+            try? self.cameraController.displayPreview(on: self.capturePreviewView)
+        }
     }
 
-
 }
+
 
