@@ -15,13 +15,14 @@ class CameraController {
     var captureSession: AVCaptureSession?
     var rearCameraInput: AVCaptureDeviceInput?
     var rearCamera: AVCaptureDevice?
-    var photoOutput: AVCapturePhotoOutput?
+    var videoOutput: AVCaptureVideoDataOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?
+    
 }
 
 extension CameraController {
     
-    func prepare(completionHandler: @escaping (Error?) -> Void) {
+    func prepare(viewController: AVCaptureVideoDataOutputSampleBufferDelegate, completionHandler: @escaping (Error?) -> Void) {
         
         func createCaptureSession() {
             self.captureSession = AVCaptureSession()
@@ -48,6 +49,7 @@ extension CameraController {
         
         func configureDeviceInputs() throws {
             guard let captureSession = self.captureSession else { throw CameraControllerError.captureSessionIsMissing }
+            captureSession.sessionPreset = AVCaptureSession.Preset.photo
             
             if let rearCamera = self.rearCamera {
                 
@@ -58,15 +60,21 @@ extension CameraController {
                 }
             }
         }
-        func configurePhotoOutput() throws {
+        func configurePhotoOutput(delegate: AVCaptureVideoDataOutputSampleBufferDelegate) throws {
             guard let captureSession = self.captureSession else { throw CameraControllerError.captureSessionIsMissing }
+            captureSession.sessionPreset = AVCaptureSession.Preset.photo
             
-               self.photoOutput = AVCapturePhotoOutput()
-            self.photoOutput!.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecType.jpeg])], completionHandler: nil)
             
-               if captureSession.canAddOutput(self.photoOutput!) {
-                captureSession.addOutput(self.photoOutput!)
+            self.videoOutput = AVCaptureVideoDataOutput()
+            let delegate = delegate
+   
+            self.videoOutput!.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
+             self.videoOutput!.setSampleBufferDelegate(delegate, queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.default))
+            
+            if captureSession.canAddOutput(self.videoOutput!) {
+                captureSession.addOutput(self.videoOutput!)
             }
+            
             captureSession.startRunning()
         }
         
@@ -75,7 +83,7 @@ extension CameraController {
                 createCaptureSession()
                 try configureCaptureDevices()
                 try configureDeviceInputs()
-                try configurePhotoOutput()
+                try configurePhotoOutput(delegate: viewController)
             }
                 
             catch {
@@ -98,9 +106,9 @@ extension CameraController {
            self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
            self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
            self.previewLayer?.connection?.videoOrientation = .portrait
+           self.previewLayer?.frame = view.bounds
         
            view.layer.insertSublayer(self.previewLayer!, at: 0)
-           self.previewLayer?.frame = view.frame
     }
     
 }

@@ -16,16 +16,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6q5-D9-HYx">
-                                <rect key="frame" x="0.0" y="44" width="414" height="627"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="627"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6q5-D9-HYx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="3iM-LM-Z5Q"/>
                             <constraint firstItem="6q5-D9-HYx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5QZ-g5-Y46"/>
                             <constraint firstItem="6q5-D9-HYx" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="5fQ-5w-BeU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6q5-D9-HYx" secondAttribute="trailing" id="eWV-t3-4tB"/>
-                            <constraint firstItem="6q5-D9-HYx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nBL-ME-igG"/>
                             <constraint firstItem="6q5-D9-HYx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vtD-JD-OK8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

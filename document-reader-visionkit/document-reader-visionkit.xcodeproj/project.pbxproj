@@ -101,10 +101,11 @@
 		4570EB762414BEFC00605321 /* document-reader-visionkit */ = {
 			isa = PBXGroup;
 			children = (
+				4570EBAA2414E0AB00605321 /* VisionKitController */,
+				4570EBA92414DF9700605321 /* CameraController */,
 				4570EB772414BEFC00605321 /* AppDelegate.swift */,
 				4570EB792414BEFC00605321 /* SceneDelegate.swift */,
 				4570EB7B2414BEFC00605321 /* ViewController.swift */,
-				4570EBA72414C27B00605321 /* CameraController.swift */,
 				4570EB7D2414BEFC00605321 /* Main.storyboard */,
 				4570EB802414BF0000605321 /* Assets.xcassets */,
 				4570EB822414BF0000605321 /* LaunchScreen.storyboard */,
@@ -129,6 +130,21 @@
 				4570EB9B2414BF0000605321 /* Info.plist */,
 			);
 			path = "document-reader-visionkitUITests";
+			sourceTree = "<group>";
+		};
+		4570EBA92414DF9700605321 /* CameraController */ = {
+			isa = PBXGroup;
+			children = (
+				4570EBA72414C27B00605321 /* CameraController.swift */,
+			);
+			path = CameraController;
+			sourceTree = "<group>";
+		};
+		4570EBAA2414E0AB00605321 /* VisionKitController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VisionKitController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
